@@ -2,6 +2,7 @@
 @section('title','Home')
 @section('content')
     <main class="container">
+    <script src="./js/index.js"></script>
         <section class="introduction">
             <p class="introduction__caption">THE ULTIMATE LUXURY EXPERIENCE</p>
             <h1 class="introduction__title mainPage">The Perfect Base For You</h1>
