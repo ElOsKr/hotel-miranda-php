@@ -2,12 +2,6 @@
 @section('title','Rooms')
 @section('content')
     <main class="container">
-        <pre>
-        <?php
-         print_r($rooms[1]["room_photo"]);
-         echo count($rooms);
-        ?>
-        </pre>
     <script src="./js/rooms.js"></script>
         <section class="introduction">
             <p class="introduction__caption">THE ULTIMATE LUXURY EXPERIENCE</p>
