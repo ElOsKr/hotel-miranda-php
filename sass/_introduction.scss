@@ -1,0 +1,87 @@
+.introduction{
+    background-color:#333333;
+    padding: 140px 20px 75px 20px;
+    font-family: var(--font-Archivo);
+    color: white;
+
+    &__caption{
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 3px;
+    }
+
+    &__title{
+        margin-top: 40px;
+        font-family: var(--font-OldStandard);
+        font-size: 56px;
+        line-height: 60px;
+        font-weight: 400;
+    }
+
+    &__btn{
+        color: white;
+        display: block;
+        padding: 23px 47px;
+        font-family: var(--font-Archivo);
+        font-weight: 700;
+        letter-spacing: 3px;
+        cursor: pointer;
+        border: 1px solid #BEAD8E;
+
+        &.btn-tour{
+            margin-top: 40px;
+            background-color: #BEAD8E;
+        }
+
+        &.btn-learn{
+            margin-top: 20px;
+            background: none;
+        }
+    }
+
+    &__location{
+        margin-top: 45px;
+        margin-bottom: -75px;
+        text-align: end;
+        p{
+            display: inline-block;
+            font-family: var(--font-Archivo);
+            font-weight: 700;
+            padding: 16px 24px;
+            background-color: white;
+            color: black;
+            
+            .route{
+                color: #BEAD8E;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .introduction{
+        padding-left: 15%;
+        padding-right: 15%;
+        &__caption{
+            font-size: 14px;
+        }
+
+        &__title{
+            &.mainPage{
+                font-size: 120px;
+                line-height: 130px;
+                max-width: 780px;
+            }
+        }
+
+        &__btn{
+            display: inline-block;
+
+            &.btn-tour{
+                margin-right: 30px;
+                margin-bottom: 50px;
+            }
+        }
+
+    }
+}

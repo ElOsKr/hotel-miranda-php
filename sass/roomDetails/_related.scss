@@ -1,0 +1,71 @@
+.related{
+
+    .swiper-relatedRooms{
+        overflow: hidden;
+        width: 100%;
+        --swiper-navigation-size: 12px;
+        --swiper-theme-color: black;
+    
+        .swiper-button-prev,.swiper-button-next{
+            background-color: white;
+            padding: 15px;
+            top: var(--swiper-navigation-top-offset);
+            margin-top: 150px;
+    
+            &:hover{
+                background-color: #BDAC8D;
+                color: white;
+            }
+        }
+    }
+    padding: 0 20px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+
+    &__title{
+        font-family: var(--font-OldStandard);
+        font-weight: 400;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    hr{
+        border-top: 1px solid #F1F1F1;
+        margin-bottom: 35px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .related{
+        .swiper-relatedRooms{
+            .swiper-slide:last-child{
+                margin-right: 20px;
+            }
+
+            .swiper-button-next{
+                right: var(--swiper-navigation-sides-offset,100px)
+            }
+
+            .swiper-button-prev{
+                left: var(--swiper-navigation-sides-offset,100px)
+            }
+        }
+        padding: 0 15%;
+
+        hr{
+            width: 80%;
+        }
+
+        .rooms-rooms__room.popular-room{
+            .room__description{
+                text-align: center;
+                .room__pricing{
+                    .room__price{
+                        font-size: 16px;
+                    }
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}

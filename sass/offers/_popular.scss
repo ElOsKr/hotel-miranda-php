@@ -1,0 +1,61 @@
+.popular{
+    background-color: #222222;
+    margin: 60px 0px;
+    text-align: center;
+    padding: 48px 20px;
+
+    .swiper-offers{
+        overflow: hidden;
+        width: 100%;
+        --swiper-navigation-size: 12px;
+        --swiper-theme-color: black;
+    
+        .swiper-button-prev,.swiper-button-next{
+            background-color: white;
+            padding: 15px;
+            top: var(--swiper-navigation-top-offset);
+            margin-top: 150px;
+    
+            &:hover{
+                background-color: #BDAC8D;
+                color: white;
+            }
+        }
+    }
+
+    &__caption{
+        font-family: var(--font-Archivo);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        color: #BDAC8D;
+        margin-bottom: 25px;
+    }
+
+    &__title{
+        font-family: var(--font-OldStandard);
+        font-size: 40px;
+        font-weight: 400;
+        color: white;
+    }
+
+    &__list-item{
+        padding: 0px 20px 20px 20px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .popular{
+        .rooms-rooms__room.popular-room{
+            .room__description{
+                text-align: center;
+                .room__pricing{
+                    .room__price{
+                        font-size: 16px;
+                    }
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}

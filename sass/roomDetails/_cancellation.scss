@@ -1,0 +1,38 @@
+.cancellation{
+    margin-top: 100px;
+    padding: 0 20px;
+
+    &__title{
+        font-family: var(--font-OldStandard);
+        font-weight: 400;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    hr{
+        border-top: 1px solid #F1F1F1;
+        margin-bottom: 50px;
+    }
+
+    &__description{
+        font-family: var(--font-Roboto);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #777777;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .cancellation{
+        padding: 100px 25% 0px 15%;
+        margin-top: 0;
+        hr{
+            width: 90%;
+        }
+
+        .rooms-rooms__room.related{
+            width: 370px;
+        }
+    }
+}

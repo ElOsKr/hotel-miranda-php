@@ -1,0 +1,70 @@
+.availability{
+    background-color: #222222;
+    color: white;
+    padding: 20px ;
+
+    &__input{
+        font-family: var(--font-Roboto);
+        font-size: 14px;
+        padding-bottom: 5px;
+        width: 100%;
+        margin: 20px 0px;
+        background: none;
+        border: none;
+        border-bottom: 2px solid #BEAD8E;
+        color: #686868;
+        display: flex;
+        flex-direction: row-reverse;
+        outline: none;
+
+        &::-webkit-calendar-picker-indicator {
+            background-image: url('../assets/home/home_calendar_icon.png');
+            margin-right: 10px;
+          }
+
+        &::-webkit-calendar-picker-indicator{
+            color: #BEAD8E;
+        }
+    }
+
+    &__arrival, &__departure{
+        label{
+            font-family: var(--font-Roboto);
+            font-weight: 700;
+            font-size: 16px;
+            display: block;
+        }
+    }
+
+    &__btn{
+        color: white;
+        display: block;
+        padding: 23px 27px;
+        font-family: var(--font-Roboto);
+        font-weight: 700;
+        letter-spacing: 3px;
+        cursor: pointer;
+        border: 1px solid #BEAD8E;
+        margin-top: 20px;
+        background-color: #BEAD8E;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .availability{
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        align-content: center;
+
+        &__arrival, &__departure{
+            width: min(15%,210px);
+        }
+
+        &__btn{
+            margin-left: 15%;
+            margin-top: 0px;
+            align-self: center;
+        }
+    }
+}
