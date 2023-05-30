@@ -73,7 +73,7 @@
                 <p><img 
                 src="./assets/roomDetails/details_{{json_decode($room['room_amenities'])[$i]}}_icon.png" 
                 alt="{{json_decode($room['room_amenities'])[$i]}}"> 
-                {{json_decode($room['room_amenities'])[$i]}}</p>
+                {{$amenities[json_decode($room['room_amenities'])[$i]]}}</p>
 
                 @endfor
                 

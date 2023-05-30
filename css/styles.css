@@ -1543,22 +1543,6 @@
     justify-content: flex-start;
     gap: 20px;
   }
-  .amenities__items p:nth-last-child(1) {
-    grid-column: 3/4;
-    grid-row: 1;
-  }
-  .amenities__items p:nth-last-child(2) {
-    grid-column: 3/4;
-    grid-row: 2;
-  }
-  .amenities__items p:nth-last-child(3) {
-    grid-column: 3/4;
-    grid-row: 3;
-  }
-  .amenities__items p:nth-last-child(4) {
-    grid-column: 3/4;
-    grid-row: 4;
-  }
   .amenities hr {
     width: 75%;
   }

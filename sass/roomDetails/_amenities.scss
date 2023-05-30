@@ -104,15 +104,6 @@
         &__items{
             justify-content: flex-start;
             gap: 20px;
-
-            p{
-                @for $fila from 1 through 4{
-                    &:nth-last-child(#{$fila}){
-                        grid-column: 3 / 4;
-                        grid-row: $fila;
-                    }
-                }            
-            }
         }
 
         hr{

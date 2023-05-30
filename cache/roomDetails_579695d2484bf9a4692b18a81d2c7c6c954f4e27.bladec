@@ -75,7 +75,7 @@
  <p><img 
  src="./assets/roomDetails/details_<?php echo \htmlentities(json_decode($room['room_amenities'])[$i]??'', ENT_QUOTES, 'UTF-8', false); ?>_icon.png" 
  alt="<?php echo \htmlentities(json_decode($room['room_amenities'])[$i]??'', ENT_QUOTES, 'UTF-8', false); ?>"> 
- <?php echo \htmlentities(json_decode($room['room_amenities'])[$i]??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ <?php echo \htmlentities($amenities[json_decode($room['room_amenities'])[$i]]??'', ENT_QUOTES, 'UTF-8', false); ?></p>
 
  <?php endfor; ?>
  
