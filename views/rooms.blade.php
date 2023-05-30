@@ -2,6 +2,11 @@
 @section('title','Rooms')
 @section('content')
     <main class="container">
+        <pre>
+            <?php
+                print_r($rooms[1])
+            ?>
+        </pre>
     <script src="./js/rooms.js"></script>
         <section class="introduction">
             <p class="introduction__caption">THE ULTIMATE LUXURY EXPERIENCE</p>
@@ -15,7 +20,7 @@
                 <div class="swiper-wrapper">
                     <div class="room__section swiper-slide">
                     @for($i = 0; $i<count($rooms); $i++)
-                        @if($i % 3 === 0 && $i!==0)
+                        @if($i % 4 === 0 && $i!==0)
                         </div>
                         <div class="room__section swiper-slide">
                             <div class="rooms-rooms__room">
@@ -33,7 +38,7 @@
                                 </div>
                                 <div class="room__description">
                                     <h2 class="room__title">
-                                        Minimal duplex Room
+                                        {{$rooms[$i]["room_type"]}}
                                     </h2>
                                     <p class="room__description-content">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cum incidunt iure temporibus laborum deleniti!
@@ -41,11 +46,11 @@
                                 </div>
                                 <div class="room__pricing">
                                     <p class="room__price">
-                                        $345<span class="price-mini">/Night</span>
+                                        ${{$rooms[$i]["room_price"]}}<span class="price-mini">/Night</span>
                                     </p>
-                                    <p class="room__booking">
+                                    <a class="room__booking" href="roomDetails.php?id={{$rooms[$i]["room_id"]}}">
                                         Booking Now
-                                    </p>
+                                    </a>
                                 </div>
                             </div>
                         @else
@@ -64,7 +69,7 @@
                                 </div>
                                 <div class="room__description">
                                     <h2 class="room__title">
-                                        Minimal duplex Room
+                                        {{$rooms[$i]["room_type"]}}
                                     </h2>
                                     <p class="room__description-content">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cum incidunt iure temporibus laborum deleniti!
@@ -72,11 +77,11 @@
                                 </div>
                                 <div class="room__pricing">
                                     <p class="room__price">
-                                        $345<span class="price-mini">/Night</span>
+                                        ${{$rooms[$i]["room_price"] - round($rooms[$i]["room_price"] * ($rooms[$i]["room_offer"]/100),0)}}<span class="price-mini">/Night</span>
                                     </p>
-                                    <p class="room__booking">
+                                    <a class="room__booking" href="roomDetails.php?id={{$rooms[$i]["room_id"]}}">
                                         Booking Now
-                                    </p>
+                                    </a>
                                 </div>
                             </div>
                             @endif    

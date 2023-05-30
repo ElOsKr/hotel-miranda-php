@@ -7,7 +7,7 @@
         padding-bottom: 30px;
         .swiper-pagination{
             bottom: var(--swiper-pagination-bottom);
-            margin-top: 20px;
+            margin-top: 50px;
             .swiper-pagination-bullet{
                 width: 30px;
                 height: 30px;
@@ -53,6 +53,9 @@
                 font-family: var(--font-OldStandard);
                 font-weight: 400;
                 font-size: 24px;
+                &::first-letter{
+                    text-transform: capitalize;
+                }
             }    
             
             &-content{
@@ -79,6 +82,7 @@
 
             .room__booking{
                 color: #BDBDBD;
+                text-decoration: none;
             }
         }
 

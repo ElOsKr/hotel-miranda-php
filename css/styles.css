@@ -1197,7 +1197,7 @@
 }
 .rooms-rooms .swiper-rooms .swiper-pagination {
   bottom: var(--swiper-pagination-bottom);
-  margin-top: 20px;
+  margin-top: 50px;
 }
 .rooms-rooms .swiper-rooms .swiper-pagination .swiper-pagination-bullet {
   width: 30px;
@@ -1241,6 +1241,9 @@
   font-weight: 400;
   font-size: 24px;
 }
+.rooms-rooms__room .room__description .room__title::first-letter {
+  text-transform: capitalize;
+}
 .rooms-rooms__room .room__description-content {
   margin: 16px 0;
   font-family: var(--font-Roboto);
@@ -1262,6 +1265,7 @@
 }
 .rooms-rooms__room .room__pricing .room__booking {
   color: #BDBDBD;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -1317,12 +1321,18 @@
   letter-spacing: 3px;
   color: #777777;
 }
+.details__caption::first-letter {
+  text-transform: capitalize;
+}
 .details__title {
   margin-top: 12px;
   font-family: var(--font-OldStandard);
   font-weight: 400;
   font-size: 40px;
   overflow-wrap: break-word;
+}
+.details__title::first-letter {
+  text-transform: capitalize;
 }
 .details__price {
   color: #BEAD8E;
@@ -1332,6 +1342,10 @@
 }
 .details__price-mini {
   font-size: 13px;
+}
+.details__discount {
+  font-family: var(--font-Archivo);
+  color: #ff6767;
 }
 .details__img {
   margin-top: 20px;
