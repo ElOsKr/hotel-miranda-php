@@ -4,7 +4,8 @@
     <main class="container">
         <pre>
             <?php
-                print_r($room)
+                print_r($room);
+                print_r($amenities)
             ?>
         </pre>
     <script src="./js/roomDetails.js"></script>
@@ -35,7 +36,7 @@
                 </div>
             </div>
             <div class="details__img">
-                <img src="./assets/roomDetails/details_doubleBed_img.jpg" alt="doubleBed">
+                <img src={{$room["room_photo"]}} alt="doubleBed">
             </div>
             <div class="details__form">
                 <h2 class="form__title">
@@ -67,20 +68,14 @@
             </h2>
             <hr/>
             <div class="amenities__items">
-                <p><img src="./assets/roomDetails/details_air_icon.png" alt="airConditioner"> Air Conditioner</p>
-                <p><img src="./assets/roomDetails/details_wifi_icon.png" alt="wifiIcon"> High speed Wifi</p>
-                <p><img src="./assets/roomDetails/details_breakfast_icon.png" alt="breakFast"> Breakfast</p>
-                <p><img src="./assets/roomDetails/details_kitchen_icon.png" alt="kitchenIcon"> Kitchen</p>
-                <p><img src="./assets/roomDetails/details_cleaning_icon.png" alt="cleaningIcon"> Cleaning</p>
-                <p><img src="./assets/roomDetails/details_shower_icon.png" alt="showerIcon"> Shower</p>
-                <p><img src="./assets/roomDetails/details_grocery_icon.png" alt="groceryIcon"> Grocery</p>
-                <p><img src="./assets/roomDetails/details_bed_icon.png" alt="bedIcon"> Single bed</p>
-                <p><img src="./assets/roomDetails/details_shop_icon.png" alt="shopIcon"> Shop near</p>
-                <p><img src="./assets/roomDetails/details_towels_icon.png" alt="towelsIcon"> Towels</p>
-                <p><img src="./assets/roomDetails/details_support_icon.png" alt="supportIcon"> 24/7 Online Support</p>
-                <p><img src="./assets/roomDetails/details_key_icon.png" alt="keyIcon"> Strong Locker</p>
-                <p><img src="./assets/roomDetails/details_security_icon.png" alt="securityIcon"> Smart Security</p>
-                <p><img src="./assets/roomDetails/details_team_icon.png" alt="teamIcon"> Expert Team</p>
+                @for($i=0 ; $i<count(json_decode($room['room_amenities'])) ; $i++ )
+
+                <p><img 
+                src="./assets/roomDetails/details_{{json_decode($room['room_amenities'])[$i]}}_icon.png" 
+                alt="{{json_decode($room['room_amenities'])[$i]}}"> 
+                {{json_decode($room['room_amenities'])[$i]}}</p>
+
+                @endfor
                 
             </div>
             <div class="amenities__founder">
