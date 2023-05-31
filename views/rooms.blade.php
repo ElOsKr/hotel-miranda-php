@@ -2,11 +2,6 @@
 @section('title','Rooms')
 @section('content')
     <main class="container">
-        <pre>
-            <?php
-                print_r($rooms[1])
-            ?>
-        </pre>
     <script src="./js/rooms.js"></script>
         <section class="introduction">
             <p class="introduction__caption">THE ULTIMATE LUXURY EXPERIENCE</p>
@@ -46,7 +41,7 @@
                                 </div>
                                 <div class="room__pricing">
                                     <p class="room__price">
-                                        ${{$rooms[$i]["room_price"]}}<span class="price-mini">/Night</span>
+                                        ${{$rooms[$i]["room_price"] - round($rooms[$i]["room_price"] * ($rooms[$i]["room_offer"]/100),0)}}<span class="price-mini">/Night</span>
                                     </p>
                                     <a class="room__booking" href="roomDetails.php?id={{$rooms[$i]["room_id"]}}">
                                         Booking Now

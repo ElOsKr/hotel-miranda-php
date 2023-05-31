@@ -8,6 +8,15 @@
         return $room;
     }
 
+    function getRelatedRooms($type){
+        include './database/connection.php';
+        $sql = "select * from rooms where room_type='$type'";
+        $result = $conn->query($sql);
+        $room = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $conn->close();
+        return $room;
+    }
+
     /*
     include './database/connection.php';
             $data = array(':id' => $id);

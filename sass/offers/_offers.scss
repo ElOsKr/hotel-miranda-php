@@ -48,6 +48,9 @@
             letter-spacing: 3px;
             color: #777777;
             margin-top: -40px;
+            &::first-letter{
+                text-transform: capitalize;
+            }
         }
 
         .offer__title{
@@ -56,6 +59,9 @@
             font-size: 40px;
             line-height: 48px;
             margin-top: 12px;
+            &::first-letter{
+                text-transform: capitalize;
+            }
         }
 
         .offer__description{
@@ -104,6 +110,7 @@
             cursor: pointer;
             border: 1px solid #BEAD8E;;
             background-color: #BEAD8E;
+            text-decoration: none;
             
         }
     }

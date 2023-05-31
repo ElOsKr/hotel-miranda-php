@@ -2,12 +2,6 @@
 @section('title','Room Details')
 @section('content')
     <main class="container">
-        <pre>
-            <?php
-                print_r($room);
-                print_r($amenities)
-            ?>
-        </pre>
     <script src="./js/roomDetails.js"></script>
         <section class="introduction">
             <p class="introduction__caption">THE ULTIMATE LUXURY EXPERIENCE</p>
@@ -121,126 +115,42 @@
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 <div class="swiper-wrapper">
-                    <div class="rooms-rooms__room swiper-slide related-room">
-                        <div class="room__img-container">
-                            <img src="./assets/rooms/rooms_room_example1.png" alt="roomImg" class="room__img">
-                        </div>
-                        <div class="room__options">
-                            <img src="./assets/rooms/rooms_room_bed.png" alt="bedIcon">
-                            <img src="./assets/rooms/rooms_room_wifi.png" alt="wifiIcon">
-                            <img src="./assets/rooms/rooms_room_car.png" alt="carIcon">
-                            <img src="./assets/rooms/rooms_room_winter.png" alt="winterIcon">
-                            <img src="./assets/rooms/rooms_room_gym.png" alt="gymIcon">
-                            <img src="./assets/rooms/rooms_room_noSmoking.png" alt="noSmokingIcon">
-                            <img src="./assets/rooms/rooms_room_cocktail.png" alt="cocktailIcon">
-                        </div>
-                        <div class="room__description">
-                            <h2 class="room__title">
-                                Minimal duplex Room
-                            </h2>
-                            <p class="room__description-content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cum incidunt iure temporibus laborum deleniti!
-                            </p>
-                            <div class="room__pricing">
-                                <p class="room__price">
-                                    $345/Night
-                                </p>
-                                <p class="room__booking">
-                                    Booking Now
-                                </p>
+                    @if(count($relatedRooms)>0)
+                        @for($i=0 ; $i<count($relatedRooms) ; $i++)
+                            <div class="rooms-rooms__room swiper-slide related-room">
+                                <div class="room__img-container">
+                                    <img src={{$relatedRooms[$i]['room_photo']}} alt="roomImg" class="room__img">
+                                </div>
+                                <div class="room__options">
+                                    <img src="./assets/rooms/rooms_room_bed.png" alt="bedIcon">
+                                    <img src="./assets/rooms/rooms_room_wifi.png" alt="wifiIcon">
+                                    <img src="./assets/rooms/rooms_room_car.png" alt="carIcon">
+                                    <img src="./assets/rooms/rooms_room_winter.png" alt="winterIcon">
+                                    <img src="./assets/rooms/rooms_room_gym.png" alt="gymIcon">
+                                    <img src="./assets/rooms/rooms_room_noSmoking.png" alt="noSmokingIcon">
+                                    <img src="./assets/rooms/rooms_room_cocktail.png" alt="cocktailIcon">
+                                </div>
+                                <div class="room__description">
+                                    <h2 class="room__title">
+                                        {{$relatedRooms[$i]['room_type']}}
+                                    </h2>
+                                    <p class="room__description-content">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cum incidunt iure temporibus laborum deleniti!
+                                    </p>
+                                    <div class="room__pricing">
+                                        <p class="room__price">
+                                            ${{$relatedRooms[$i]['room_price'] - round($relatedRooms[$i]['room_price']*($relatedRooms[$i]['room_offer']/100))}}/Night
+                                        </p>
+                                        <a class="room__booking" href="roomDetails.php?id={{$relatedRooms[$i]['room_id']}}">
+                                            Booking Now
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="rooms-rooms__room swiper-slide related-room">
-                        <div class="room__img-container">
-                            <img src="./assets/rooms/rooms_room_example1.png" alt="roomImg" class="room__img">
-                        </div>
-                        <div class="room__options">
-                            <img src="./assets/rooms/rooms_room_bed.png" alt="bedIcon">
-                            <img src="./assets/rooms/rooms_room_wifi.png" alt="wifiIcon">
-                            <img src="./assets/rooms/rooms_room_car.png" alt="carIcon">
-                            <img src="./assets/rooms/rooms_room_winter.png" alt="winterIcon">
-                            <img src="./assets/rooms/rooms_room_gym.png" alt="gymIcon">
-                            <img src="./assets/rooms/rooms_room_noSmoking.png" alt="noSmokingIcon">
-                            <img src="./assets/rooms/rooms_room_cocktail.png" alt="cocktailIcon">
-                        </div>
-                        <div class="room__description">
-                            <h2 class="room__title">
-                                Minimal duplex Room
-                            </h2>
-                            <p class="room__description-content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cum incidunt iure temporibus laborum deleniti!
-                            </p>
-                            <div class="room__pricing">
-                                <p class="room__price">
-                                    $345/Night
-                                </p>
-                                <p class="room__booking">
-                                    Booking Now
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rooms-rooms__room swiper-slide related-room">
-                        <div class="room__img-container">
-                            <img src="./assets/rooms/rooms_room_example1.png" alt="roomImg" class="room__img">
-                        </div>
-                        <div class="room__options">
-                            <img src="./assets/rooms/rooms_room_bed.png" alt="bedIcon">
-                            <img src="./assets/rooms/rooms_room_wifi.png" alt="wifiIcon">
-                            <img src="./assets/rooms/rooms_room_car.png" alt="carIcon">
-                            <img src="./assets/rooms/rooms_room_winter.png" alt="winterIcon">
-                            <img src="./assets/rooms/rooms_room_gym.png" alt="gymIcon">
-                            <img src="./assets/rooms/rooms_room_noSmoking.png" alt="noSmokingIcon">
-                            <img src="./assets/rooms/rooms_room_cocktail.png" alt="cocktailIcon">
-                        </div>
-                        <div class="room__description">
-                            <h2 class="room__title">
-                                Minimal duplex Room
-                            </h2>
-                            <p class="room__description-content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cum incidunt iure temporibus laborum deleniti!
-                            </p>
-                            <div class="room__pricing">
-                                <p class="room__price">
-                                    $345/Night
-                                </p>
-                                <p class="room__booking">
-                                    Booking Now
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rooms-rooms__room swiper-slide related-room">
-                        <div class="room__img-container">
-                            <img src="./assets/rooms/rooms_room_example1.png" alt="roomImg" class="room__img">
-                        </div>
-                        <div class="room__options">
-                            <img src="./assets/rooms/rooms_room_bed.png" alt="bedIcon">
-                            <img src="./assets/rooms/rooms_room_wifi.png" alt="wifiIcon">
-                            <img src="./assets/rooms/rooms_room_car.png" alt="carIcon">
-                            <img src="./assets/rooms/rooms_room_winter.png" alt="winterIcon">
-                            <img src="./assets/rooms/rooms_room_gym.png" alt="gymIcon">
-                            <img src="./assets/rooms/rooms_room_noSmoking.png" alt="noSmokingIcon">
-                            <img src="./assets/rooms/rooms_room_cocktail.png" alt="cocktailIcon">
-                        </div>
-                        <div class="room__description">
-                            <h2 class="room__title">
-                                Minimal duplex Room
-                            </h2>
-                            <p class="room__description-content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cum incidunt iure temporibus laborum deleniti!
-                            </p>
-                            <div class="room__pricing">
-                                <p class="room__price">
-                                    $345/Night
-                                </p>
-                                <p class="room__booking">
-                                    Booking Now
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                        @endfor    
+                    @else
+                        <div>No related room</div>
+                    @endif        
                 </div>
             </div>
         </section>

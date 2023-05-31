@@ -20,6 +20,12 @@
         "air" => "Air Conditioner",
     ];
 
-    echo $blade->run('roomDetails',array('room' => $room = getRoom($_GET['id'])[0], 'amenities' => $amenities = $roomAmenities))
+    $roomFetched = getRoom($_GET['id'])[0];
+
+    $roomType = $roomFetched['room_type'];
+
+    $related = getRelatedRooms($roomType);
+
+    echo $blade->run('roomDetails',array('room' => $room = $roomFetched, 'amenities' => $amenities = $roomAmenities, 'relatedRooms' => $relatedRoom = $related))
 
 ?>

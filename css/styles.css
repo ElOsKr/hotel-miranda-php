@@ -1591,6 +1591,9 @@
   margin-top: 100px;
   margin-bottom: 50px;
 }
+.related .swiper-wrapper {
+  height: auto;
+}
 .related .swiper-relatedRooms {
   overflow: hidden;
   width: 100%;
@@ -1634,13 +1637,13 @@
   .related hr {
     width: 80%;
   }
-  .related .rooms-rooms__room.popular-room .room__description {
+  .related .rooms-rooms__room .room__description {
     text-align: center;
   }
-  .related .rooms-rooms__room.popular-room .room__description .room__pricing {
+  .related .rooms-rooms__room .room__description .room__pricing {
     flex-direction: row;
   }
-  .related .rooms-rooms__room.popular-room .room__description .room__pricing .room__price {
+  .related .rooms-rooms__room .room__description .room__pricing .room__price {
     font-size: 16px;
   }
 }
@@ -1692,12 +1695,18 @@
   color: #777777;
   margin-top: -40px;
 }
+.offers__offer .offer__caption::first-letter {
+  text-transform: capitalize;
+}
 .offers__offer .offer__title {
   font-family: var(--font-OldStandard);
   font-weight: 400;
   font-size: 40px;
   line-height: 48px;
   margin-top: 12px;
+}
+.offers__offer .offer__title::first-letter {
+  text-transform: capitalize;
 }
 .offers__offer .offer__description {
   font-family: var(--font-Roboto);
@@ -1744,6 +1753,7 @@
   cursor: pointer;
   border: 1px solid #BEAD8E;
   background-color: #BEAD8E;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -1802,6 +1812,9 @@
   width: 100%;
   --swiper-navigation-size: 12px;
   --swiper-theme-color: black;
+}
+.popular .swiper-offers .swiper-wrapper {
+  height: auto;
 }
 .popular .swiper-offers .swiper-button-prev, .popular .swiper-offers .swiper-button-next {
   background-color: white;

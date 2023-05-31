@@ -1,5 +1,8 @@
 .related{
 
+    .swiper-wrapper{
+        height: auto;
+    }
     .swiper-relatedRooms{
         overflow: hidden;
         width: 100%;
@@ -56,7 +59,7 @@
             width: 80%;
         }
 
-        .rooms-rooms__room.popular-room{
+        .rooms-rooms__room{
             .room__description{
                 text-align: center;
                 .room__pricing{
