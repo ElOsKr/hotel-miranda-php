@@ -2,6 +2,7 @@
 @section('title','Contact')
 @section('content')
     <main class="container">
+        <script src="./js/contact.js"></script>
         <section class="introduction">
             <p class="introduction__caption">THE ULTIMATE LUXURY EXPERIENCE</p>
             <h1 class="introduction__title">New Details</h1>
@@ -67,16 +68,18 @@
             </div>
         </section>
         <section class="contact">
-            <div class="contact__container">
-                <input type="text" name="username" id="username" class="contact__username" placeholder="Your full name">
-                <input type="tel" name="usertel" id="usertel" class="contact__usertel" placeholder="Add phone number">
-                <input type="email" name="useremail" id="useremail" class="contact__useremail" placeholder="Enter email addres">
-                <input type="text" name="usersubject" id="usersubject" class="contact__usersubject" placeholder="Enter subject">
-                <textarea name="usermessage" id="usermessage" cols="30" rows="10" class="contact__usermessage" placeholder="Enter message" ></textarea>
-            </div>
-            <button class="contact__btn">
-                SEND
-            </button>
+            <form id="contactForm" method="post">
+                <div class="contact__container">
+                    <input type="text" name="username" id="username" class="contact__username" placeholder="Your full name">
+                    <input type="tel" name="usertel" id="usertel" class="contact__usertel" placeholder="Add phone number">
+                    <input type="email" name="useremail" id="useremail" class="contact__useremail" placeholder="Enter email addres">
+                    <input type="text" name="usersubject" id="usersubject" class="contact__usersubject" placeholder="Enter subject">
+                    <textarea name="usermessage" id="usermessage" cols="30" rows="10" class="contact__usermessage" placeholder="Enter message" ></textarea>                    
+                </div>            
+                <input type="submit" class="contact__btn" value="SEND" id="formBtn"/>
+                <p id="formStatus">
+                </p>                
+            </form>
         </section>
     </main>
 @endsection          

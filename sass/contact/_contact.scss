@@ -44,18 +44,30 @@
         background-position-y: 25px;
         background-position-x: 15px;
     }
-    &__btn{
-        color: white;
-        padding: 20px 102px;
-        font-family: var(--font-Roboto);
-        font-weight: 700;
-        letter-spacing: 3px;
-        cursor: pointer;
-        border: 1px solid #BEAD8E;
-        margin-top: 20px;
-        background-color: #BEAD8E;
-        
-    }
+}
+#contactForm{
+    position: relative;
+}
+#formBtn{
+    color: white;
+    padding: 20px 102px;
+    font-family: var(--font-Roboto);
+    font-weight: 700;
+    letter-spacing: 3px;
+    cursor: pointer;
+    border: 1px solid #BEAD8E;
+    margin-top: 20px;
+    background-color: #BEAD8E;
+    width: 258px;    
+}
+#formStatus{
+    margin-top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    font-family: var(--font-Roboto);
+    font-weight: 400;
+    font-size: 25px;
 }
 
 @media only screen and (min-width: 1000px) {

@@ -1,7 +1,7 @@
 <pre>
 <?php
 
-    require_once './database//db-config.php';
+    require_once './database/db-config.php';
 
     $host = constant("DB_HOST");
     $user = constant("DB_USER");
