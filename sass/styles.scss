@@ -1,0 +1,37 @@
+@use 'header/header';
+@use 'introduction';
+@use 'home/availability';
+@use 'home/aboutUs';
+@use 'home/rooms';
+@use 'home/video';
+@use 'home/facilities';
+@use 'home/menu';
+@use 'home/stadistics';
+@use 'about/description';
+@use 'about/restaurant';
+@use 'about/facilities_about';
+@use 'about/counter';
+@use 'rooms/rooms_rooms';
+@use 'roomDetails/details';
+@use 'roomDetails/amenities';
+@use 'roomDetails/cancellation';
+@use 'roomDetails/related';
+@use 'offers/offers';
+@use 'offers/popular';
+@use 'contact/information';
+@use 'contact/map';
+@use 'contact/contact';
+@use 'footer/footer';
+
+html, * {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+    
+}
+
+:root{
+    --font-Roboto: 'Roboto';
+    --font-OldStandard: 'Old Standard TT';
+    --font-Archivo: 'Archivo';
+}
