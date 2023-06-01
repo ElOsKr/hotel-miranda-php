@@ -10,11 +10,11 @@ function gen_uuid() {
     );
 }
 
-    function insertContact($customer,$subject,$comment){
+    function insertContact($name, $email, $phone ,$subject,$comment){
         $conn = new mysqli('localhost', 'root', '', 'mirandahotel');
         $id = gen_uuid();
-        $sql = "insert into contacts (contact_id, contact_customer, contact_subject, contact_comment, contact_status)
-                values('$id', '$customer', '$subject', '$comment', 0)";
+        $sql = "insert into contacts (contact_id, contact_name, contact_email, contact_phone, contact_subject, contact_comment, contact_status)
+                values('$id', '$name', '$email', '$phone', '$subject', '$comment', 0)";
         $result = $conn->query($sql);
         $conn->close();
         if($result === TRUE){
@@ -28,16 +28,13 @@ function gen_uuid() {
         $json = file_get_contents('php://input');
         $data = json_decode($json, true);
         
-        $customer = [
-            "name" => $data['name'],
-            "email" => $data['email'],
-            "phone" => intval($data['phone']),
-        ];
-
+        $name = $data['name'];
+        $email = $data['email'];
+        $phone = intval($data['phone']);
         $subject = $data['subject'];
         $message = $data['message'];
 
-        $insert = insertContact(json_encode($customer), $subject, $message);
+        $insert = insertContact($name, $email, $phone, $subject, $message);
         echo $insert;
     }
 

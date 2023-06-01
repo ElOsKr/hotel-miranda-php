@@ -71,7 +71,7 @@
  <form id="contactForm" method="post">
  <div class="contact__container">
  <input type="text" name="username" id="username" class="contact__username" placeholder="Your full name">
- <input type="tel" name="usertel" id="usertel" class="contact__usertel" placeholder="Add phone number">
+ <input type="tel" name="usertel" id="usertel" class="contact__usertel" placeholder="Add phone number (9 digits)" pattern="[0-9]{9}">
  <input type="email" name="useremail" id="useremail" class="contact__useremail" placeholder="Enter email addres">
  <input type="text" name="usersubject" id="usersubject" class="contact__usersubject" placeholder="Enter subject">
  <textarea name="usermessage" id="usermessage" cols="30" rows="10" class="contact__usermessage" placeholder="Enter message" ></textarea>                    
