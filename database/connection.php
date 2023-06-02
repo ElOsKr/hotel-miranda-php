@@ -1,4 +1,3 @@
-<pre>
 <?php
 
     require_once './database/db-config.php';
@@ -8,10 +7,10 @@
     $password = constant("DB_PASSWORD");
     $database = constant("DB_DATABASE");
 
-    $conn = new mysqli($host, $user, $password, $database);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    try{
+        $dsn = "mysql:host=$host;dbname=$database";
+        $conn = new PDO($dsn, $user, $password);
+    } catch (PDOException $e){
+        echo $e->getMessage();
     }
 ?>
-</pre>
