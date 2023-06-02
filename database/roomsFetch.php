@@ -1,10 +1,12 @@
 <?php
+
+    include './database/connection.php';
+
     function getRooms(){
-        include './database/connection.php';
+        global $conn;
         $sql = 'select * from rooms';
         $result = $conn->query($sql);
-        $rooms = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        $conn->close();
+        $rooms = $result->fetchAll();
         return $rooms;
     }
 

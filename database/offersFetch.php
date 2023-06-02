@@ -1,19 +1,19 @@
 <?php
+    include './database/connection.php';
+    
     function getOffers(){
-        include './database/connection.php';
+        global $conn;
         $sql = 'select * from rooms order by room_offer desc limit 5';
         $result = $conn->query($sql);
-        $rooms = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        $conn->close();
+        $rooms = $result->fetchAll();
         return $rooms;
     }
 
     function getPopulars(){
-        include './database/connection.php';
+        global $conn;
         $sql = 'select * from rooms limit 5';
         $result = $conn->query($sql);
-        $rooms = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        $conn->close();
+        $rooms = $result->fetchAll();
         return $rooms;
     }
 
