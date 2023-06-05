@@ -8,7 +8,7 @@
         $sql = "select * from rooms where room_id=:id";
         $result = $conn->prepare($sql);
         $result->execute($data);
-        $room = $result->fetchAll();
+        $room = $result->fetchAll(PDO::FETCH_ASSOC);
         return $room;
     }
 
@@ -18,7 +18,7 @@
         $sql = "select * from rooms where room_type=:type";
         $result = $conn->prepare($sql);
         $result->execute($data);
-        $room = $result->fetchAll();
+        $room = $result->fetchAll(PDO::FETCH_ASSOC);
         return $room;
     }
 ?>

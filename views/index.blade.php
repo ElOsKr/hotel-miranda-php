@@ -9,17 +9,17 @@
             <button class="introduction__btn btn-tour">TAKE A TOUR</button>
             <button class="introduction__btn btn-learn">LEARN MORE</button>
         </section>
-        <section class="availability">
+        <form class="availability" action="rooms.php" method="get">
             <div class="availability__arrival">
                 <label for="arrivalDate">Arrival Date</label>
-                <input type="date" name="arrivalDate" id="arrivalDate" class="availability__input">
+                <input type="date" name="arrivalDate" id="arrivalDate" class="availability__input" required>
             </div>
             <div class="availability__departure">
                 <label for="departureDate">LeDeparture Date</label>
-                <input type="date" name="departureDate" id="departureDate" class="availability__input">
+                <input type="date" name="departureDate" id="departureDate" class="availability__input" required>
             </div>
-            <button class="availability__btn">CHECK AVAILABILITY</button>
-        </section>
+            <input type="submit" class="availability__btn" value="CHECK AVAILABILITY" />
+        </form>
         <section class="aboutUs">
             <div class="aboutUs__introduction">
                 <p class="aboutUs__caption">ABOUT US</p>
@@ -63,106 +63,35 @@
             <h1 class="rooms__title">Hand Picked Rooms</h1>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="rooms__room swiper-slide">
-                        <div class="room__options-home">
-                            <img src="./assets/rooms/rooms_room_bed.png" alt="bedIcon">
-                            <img src="./assets/rooms/rooms_room_wifi.png" alt="wifiIcon">
-                            <img src="./assets/rooms/rooms_room_car.png" alt="carIcon">
-                            <img src="./assets/rooms/rooms_room_winter.png" alt="winterIcon">
-                            <img src="./assets/rooms/rooms_room_gym.png" alt="gymIcon">
-                            <img src="./assets/rooms/rooms_room_noSmoking.png" alt="noSmokingIcon">
-                            <img src="./assets/rooms/rooms_room_cocktail.png" alt="cocktailIcon">
+                        @for($i = 0; $i<count($rooms); $i++)
+                        <div class="rooms__room swiper-slide">
+                            <div class="room__options-home">
+                                <img src="./assets/rooms/rooms_room_bed.png" alt="bedIcon">
+                                <img src="./assets/rooms/rooms_room_wifi.png" alt="wifiIcon">
+                                <img src="./assets/rooms/rooms_room_car.png" alt="carIcon">
+                                <img src="./assets/rooms/rooms_room_winter.png" alt="winterIcon">
+                                <img src="./assets/rooms/rooms_room_gym.png" alt="gymIcon">
+                                <img src="./assets/rooms/rooms_room_noSmoking.png" alt="noSmokingIcon">
+                                <img src="./assets/rooms/rooms_room_cocktail.png" alt="cocktailIcon">
+                            </div>
+                            <div class="room__img">
+                                <a href="roomDetails.php?id={{$rooms[$i]['room_id']}}">
+                                    <img src={{$rooms[$i]['room_photo']}} alt={{$rooms[$i]['room_type']}}> 
+                                </a>                                
+                            </div>
+                            <div class="room__info">
+                                <h1 class="room__title">
+                                    {{$rooms[$i]['room_type']}}
+                                </h1>
+                                <p class="room__description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim facere, fugiat qui magni mollitia quaerat culpa dolore dolor. Porro, animi!
+                                </p>
+                                <p class="room__price">
+                                    ${{$rooms[$i]["room_price"] - round($rooms[$i]["room_price"] * ($rooms[$i]["room_offer"]/100),0)}}<span class="room__price-mini">/Night</span>
+                                </p>
+                            </div>
                         </div>
-                        <div class="room__img">
-                           <img src="./assets/home/home_room1.png" alt="room1"> 
-                        </div>
-                        <div class="room__info">
-                            <h1 class="room__title">
-                                Minimal Duplex Room
-                            </h1>
-                            <p class="room__description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim facere, fugiat qui magni mollitia quaerat culpa dolore dolor. Porro, animi!
-                            </p>
-                            <p class="room__price">
-                                $345<span class="room__price-mini">/Night</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="rooms__room swiper-slide">
-                        <div class="room__options-home">
-                            <img src="./assets/rooms/rooms_room_bed.png" alt="bedIcon">
-                            <img src="./assets/rooms/rooms_room_wifi.png" alt="wifiIcon">
-                            <img src="./assets/rooms/rooms_room_car.png" alt="carIcon">
-                            <img src="./assets/rooms/rooms_room_winter.png" alt="winterIcon">
-                            <img src="./assets/rooms/rooms_room_gym.png" alt="gymIcon">
-                            <img src="./assets/rooms/rooms_room_noSmoking.png" alt="noSmokingIcon">
-                            <img src="./assets/rooms/rooms_room_cocktail.png" alt="cocktailIcon">
-                        </div>
-                        <div class="room__img">
-                           <img src="./assets/home/home_luxuryRoom_img.png" alt="room1"> 
-                        </div>
-                        <div class="room__info">
-                            <h1 class="room__title">
-                                Minimal Duplex Room
-                            </h1>
-                            <p class="room__description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim facere, fugiat qui magni mollitia quaerat culpa dolore dolor. Porro, animi!
-                            </p>
-                            <p class="room__price">
-                                $345<span class="room__price-mini">/Night</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="rooms__room swiper-slide">
-                        <div class="room__options-home">
-                            <img src="./assets/rooms/rooms_room_bed.png" alt="bedIcon">
-                            <img src="./assets/rooms/rooms_room_wifi.png" alt="wifiIcon">
-                            <img src="./assets/rooms/rooms_room_car.png" alt="carIcon">
-                            <img src="./assets/rooms/rooms_room_winter.png" alt="winterIcon">
-                            <img src="./assets/rooms/rooms_room_gym.png" alt="gymIcon">
-                            <img src="./assets/rooms/rooms_room_noSmoking.png" alt="noSmokingIcon">
-                            <img src="./assets/rooms/rooms_room_cocktail.png" alt="cocktailIcon">
-                        </div>
-                        <div class="room__img">
-                           <img src="./assets/home/home_luxuryRoom_img2.png" alt="room1"> 
-                        </div>
-                        <div class="room__info">
-                            <h1 class="room__title">
-                                Minimal Duplex Room
-                            </h1>
-                            <p class="room__description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim facere, fugiat qui magni mollitia quaerat culpa dolore dolor. Porro, animi!
-                            </p>
-                            <p class="room__price">
-                                $345<span class="room__price-mini">/Night</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="rooms__room swiper-slide">
-                        <div class="room__options-home">
-                            <img src="./assets/rooms/rooms_room_bed.png" alt="bedIcon">
-                            <img src="./assets/rooms/rooms_room_wifi.png" alt="wifiIcon">
-                            <img src="./assets/rooms/rooms_room_car.png" alt="carIcon">
-                            <img src="./assets/rooms/rooms_room_winter.png" alt="winterIcon">
-                            <img src="./assets/rooms/rooms_room_gym.png" alt="gymIcon">
-                            <img src="./assets/rooms/rooms_room_noSmoking.png" alt="noSmokingIcon">
-                            <img src="./assets/rooms/rooms_room_cocktail.png" alt="cocktailIcon">
-                        </div>
-                        <div class="room__img">
-                           <img src="./assets/home/home_luxuryRoom_img3.png" alt="room1"> 
-                        </div>
-                        <div class="room__info">
-                            <h1 class="room__title">
-                                Minimal Duplex Room
-                            </h1>
-                            <p class="room__description">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim facere, fugiat qui magni mollitia quaerat culpa dolore dolor. Porro, animi!
-                            </p>
-                            <p class="room__price">
-                                $345<span class="room__price-mini">/Night</span>
-                            </p>
-                        </div>
-                    </div>
+                    @endfor
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>

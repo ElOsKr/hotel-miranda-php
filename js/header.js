@@ -5,7 +5,7 @@ function cargarEventos(){
     window.addEventListener("scroll", hideNavBar);
     document.addEventListener("mousemove",detectMouse);
     document.getElementsByClassName("header__content-logo")[0].addEventListener("click", () => {
-        window.location.href = "./index.html"
+        window.location.href = "./index.php"
     })
 }
 

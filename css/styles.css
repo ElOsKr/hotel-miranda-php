@@ -486,6 +486,9 @@
   font-size: 28px;
   font-weight: 400;
 }
+.rooms__room .room__info .room__title::first-letter {
+  text-transform: capitalize;
+}
 .rooms__room .room__info .room__description {
   font-family: var(--font-Roboto);
   color: #777777;
@@ -1190,6 +1193,12 @@
 }
 .rooms-rooms {
   padding: 0 20px;
+}
+.rooms-rooms .room_msg {
+  font-family: var(--font-OldStandard);
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 10px;
 }
 .rooms-rooms .swiper-rooms {
   overflow: hidden;
