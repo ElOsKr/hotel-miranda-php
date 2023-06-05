@@ -37,7 +37,7 @@
         $state = $result->rowCount();
 
         if($state === 0){
-            return "No rooms available";
+            return false;
         }else{
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }

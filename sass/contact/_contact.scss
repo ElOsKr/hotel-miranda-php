@@ -48,6 +48,7 @@
 #contactForm{
     position: relative;
 }
+
 #formBtn{
     color: white;
     padding: 20px 102px;
@@ -60,7 +61,13 @@
     background-color: #BEAD8E;
     width: 258px;    
 }
-#formStatus{
+
+.formSuccess, .formFields, .formError{
+    display: none;
+}
+
+.success{
+    display: block;
     margin-top: 20px;
     left: 50%;
     transform: translate(-50%);
@@ -68,6 +75,19 @@
     font-family: var(--font-Roboto);
     font-weight: 400;
     font-size: 25px;
+    color: green;
+}
+
+.error{
+    display: block;
+    margin-top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    font-family: var(--font-Roboto);
+    font-weight: 400;
+    font-size: 25px;
+    color: red;
 }
 
 @media only screen and (min-width: 1000px) {

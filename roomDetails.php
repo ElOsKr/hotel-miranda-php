@@ -26,6 +26,28 @@
 
     $related = getRelatedRooms($roomType);
 
-    echo $blade->run('roomDetails',array('room' => $room = $roomFetched, 'amenities' => $amenities = $roomAmenities, 'relatedRooms' => $relatedRoom = $related))
+    global $availability;
+
+    $availability = null;
+
+    if(isset($_POST['checkIn']) && isset($_POST['checkOut'])){
+
+        global $availability;
+
+        $availables = getAvailables($_POST['checkIn'],$_POST['checkOut']);
+
+        if(!is_null($availables)){
+            foreach($availables as $key => $val){
+                if($val['room_id']===$_GET['id']){
+                    $availability = true;
+                    break;
+                }
+            }
+        }else{
+            $availability = false;
+        }
+    }
+
+    echo $blade->run('roomDetails',array('room' => $room = $roomFetched, 'amenities' => $amenities = $roomAmenities, 'relatedRooms' => $relatedRoom = $related, 'availability' => $availability))
 
 ?>

@@ -77,8 +77,9 @@
  <textarea name="usermessage" id="usermessage" cols="30" rows="10" class="contact__usermessage" placeholder="Enter message" ></textarea>                    
  </div>            
  <input type="submit" class="contact__btn" value="SEND" id="formBtn"/>
- <p id="formStatus">
- </p>                
+ <p id="formFields" class="formFields">Must fill all fields</p>
+ <p id="formSuccess" class="formSuccess">Comment sent successfully</p>
+ <p id="formError" class="formError">Comment sent successfully</p>              
  </form>
  </section>
  </main>

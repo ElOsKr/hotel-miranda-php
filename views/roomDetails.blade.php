@@ -32,20 +32,27 @@
             <div class="details__img">
                 <img src={{$room["room_photo"]}} alt="doubleBed">
             </div>
-            <div class="details__form">
+            <form class="details__form" method="post" action="roomDetails.php?id={{$room['room_id']}}">
                 <h2 class="form__title">
                     Check Availability
                 </h2>
                 <div class="form__checkIn">
                     <label for="checkIn">Check In</label>
-                    <input type="date" name="checkIn" id="checkIn">
+                    <input type="date" name="checkIn" id="checkIn" required>
                 </div>
                 <div class="form__checkOut">
                     <label for="checkOut">Check Out</label>
-                    <input type="date" name="checkOut" id="checkOut">
+                    <input type="date" name="checkOut" id="checkOut" required>
                 </div>
-                <button class="form__btn">CHECK AVAILABILITY</button>
-            </div>
+                <input type="submit" class="form__btn" value="CHECK AVAILABILITY" />
+                <p class="details__availability">
+                    @if($availability)
+                        The room is available between {{$_POST['checkIn']}} and {{$_POST['checkOut']}}
+                    @else
+                        The room is <span style="color: red;">NOT</span> available between {{$_POST['checkIn']}} and {{$_POST['checkOut']}}
+                    @endif
+                </p>
+            </form>
             <p class="details__description">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
                 Doloremque, harum cumque. Culpa aperiam obcaecati perspiciatis 

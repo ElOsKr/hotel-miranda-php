@@ -34,20 +34,29 @@
  <div class="details__img">
  <img src=<?php echo \htmlentities($room["room_photo"]??'', ENT_QUOTES, 'UTF-8', false); ?> alt="doubleBed">
  </div>
- <div class="details__form">
+ <form class="details__form" method="post" action="roomDetails.php?id=<?php echo \htmlentities($room['room_id']??'', ENT_QUOTES, 'UTF-8', false); ?>">
  <h2 class="form__title">
  Check Availability
  </h2>
  <div class="form__checkIn">
  <label for="checkIn">Check In</label>
- <input type="date" name="checkIn" id="checkIn">
+ <input type="date" name="checkIn" id="checkIn" required>
  </div>
  <div class="form__checkOut">
  <label for="checkOut">Check Out</label>
- <input type="date" name="checkOut" id="checkOut">
+ <input type="date" name="checkOut" id="checkOut" required>
  </div>
- <button class="form__btn">CHECK AVAILABILITY</button>
- </div>
+ <input type="submit" class="form__btn" value="CHECK AVAILABILITY" />
+ <p class="details__availability">
+ <?php if($availability): ?>
+ The room is available between <?php echo \htmlentities($_POST['checkIn']??'', ENT_QUOTES, 'UTF-8', false); ?> and <?php echo \htmlentities($_POST['checkOut']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ <?php else: ?>
+ The room is <span style="color: red;">NOT</span> available between <?php echo \htmlentities($_POST['checkIn']??'', ENT_QUOTES, 'UTF-8', false); ?> and <?php echo \htmlentities($_POST['checkOut']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ <?php endif; ?>
+ </p>
+ </form>
  <p class="details__description">
  Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
  Doloremque, harum cumque. Culpa aperiam obcaecati perspiciatis 
