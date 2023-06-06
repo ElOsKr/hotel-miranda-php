@@ -48,7 +48,7 @@
                 <p class="details__availability">
                     @if($availability)
                         The room is available between {{$_POST['checkIn']}} and {{$_POST['checkOut']}}
-                    @else
+                    @elseif($availability === false)
                         The room is <span style="color: red;">NOT</span> available between {{$_POST['checkIn']}} and {{$_POST['checkOut']}}
                     @endif
                 </p>
