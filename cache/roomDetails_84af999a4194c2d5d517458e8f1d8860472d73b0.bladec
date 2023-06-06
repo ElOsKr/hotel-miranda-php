@@ -1,11 +1,6 @@
 <?php $_shouldextend[1]=1; ?>
 <?php $this->startSection('title','Room Details'); ?>
 <?php $this->startSection('content'); ?>
-<pre>
- <?php
- print_r($availability)
- ?>
-</pre>
  <main class="container">
  <script src="./js/roomDetails.js"></script>
  <section class="introduction">

@@ -4,3 +4,4 @@
 *.scss.map
 .env
 db-config.php
+.htaccess
