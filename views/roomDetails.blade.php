@@ -46,9 +46,9 @@
                 </div>
                 <input type="submit" class="form__btn" value="CHECK AVAILABILITY" />
                 <p class="details__availability">
-                    @if($availability)
+                    @if($availability === "available")
                         The room is available between {{$_POST['checkIn']}} and {{$_POST['checkOut']}}
-                    @elseif($availability === false)
+                    @elseif($availability === "not available")
                         The room is <span style="color: red;">NOT</span> available between {{$_POST['checkIn']}} and {{$_POST['checkOut']}}
                     @endif
                 </p>

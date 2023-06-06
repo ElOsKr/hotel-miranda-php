@@ -36,15 +36,15 @@
 
         $availables = getAvailables($_POST['checkIn'],$_POST['checkOut']);
 
-        if(!is_null($availables)){
+        if(($availables)){
             foreach($availables as $key => $val){
                 if($val['room_id']===$_GET['id']){
-                    $availability = true;
+                    $availability = "available";
                     break;
                 }
             }
         }else{
-            $availability = false;
+            $availability = "not available";
         }
     }
 
