@@ -48,7 +48,7 @@
 
  <?php endfor; ?>
  </div>
- <a class="offer__btn" href="roomDetails.php?id=<?php echo \htmlentities($offers[$i]['room_id']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <a class="offer__btn" href="roomDetails?id=<?php echo \htmlentities($offers[$i]['room_id']??'', ENT_QUOTES, 'UTF-8', false); ?>">
  BOOK NOW
  </a>
  </div>
@@ -93,7 +93,7 @@
  <p class="room__price">
  $<?php echo \htmlentities($populars[$i]['room_price'] - round($populars[$i]['room_price']*($populars[$i]['room_offer']/100))??'', ENT_QUOTES, 'UTF-8', false); ?>/Night
  </p>
- <a class="room__booking" href="roomDetails.php?id=<?php echo \htmlentities($populars[$i]['room_id']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <a class="room__booking" href="roomDetails?id=<?php echo \htmlentities($populars[$i]['room_id']??'', ENT_QUOTES, 'UTF-8', false); ?>">
  Booking Now
  </a>
  </div>

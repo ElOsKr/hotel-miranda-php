@@ -9,7 +9,7 @@
             <button class="introduction__btn btn-tour">TAKE A TOUR</button>
             <button class="introduction__btn btn-learn">LEARN MORE</button>
         </section>
-        <form class="availability" action="rooms.php" method="get">
+        <form class="availability" action="rooms" method="get">
             <div class="availability__arrival">
                 <label for="arrivalDate">Arrival Date</label>
                 <input type="date" name="arrivalDate" id="arrivalDate" class="availability__input" required>
@@ -75,7 +75,7 @@
                                 <img src="./assets/rooms/rooms_room_cocktail.png" alt="cocktailIcon">
                             </div>
                             <div class="room__img">
-                                <a href="roomDetails.php?id={{$rooms[$i]['room_id']}}">
+                                <a href="roomDetails?id={{$rooms[$i]['room_id']}}">
                                     <img src={{$rooms[$i]['room_photo']}} alt={{$rooms[$i]['room_type']}}> 
                                 </a>                                
                             </div>

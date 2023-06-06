@@ -21,19 +21,21 @@
                 <img src="./assets/header/header_close_icon.png" alt="menuClose" id="closeMenu">
             </div>
             <div class="header__content">
-                <div class="header__content-logo">
-                    <p class="header__content-logo logo__letter">H</p>
-                    <div class="header__content-name logo__name">
-                        <p>HOTEL</p>
-                        <p>MIRANDA</p>
-                    </div>
-                </div>
+                <a href="index">
+                    <div class="header__content-logo">
+                        <p class="header__content-logo logo__letter">H</p>
+                        <div class="header__content-name logo__name">
+                            <p>HOTEL</p>
+                            <p>MIRANDA</p>
+                        </div>
+                    </div>                    
+                </a>
                 <div class="header__content-menu">
                     <ul>
-                        <li><a href="./aboutUs.php">About us</a></li>
-                        <li><a href="./rooms.php">Rooms</a></li>
-                        <li><a href="./offers.php">Offers</a></li>
-                        <li><a href="./contact.php">Contact</a></li>
+                        <li><a href="./aboutUs">About us</a></li>
+                        <li><a href="./rooms">Rooms</a></li>
+                        <li><a href="./offers">Offers</a></li>
+                        <li><a href="./contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="header__content-options">

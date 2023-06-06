@@ -45,7 +45,7 @@
                                     <p class="room__price">
                                         ${{$rooms[1][$i]["room_price"] - round($rooms[1][$i]["room_price"] * ($rooms[1][$i]["room_offer"]/100),0)}}<span class="price-mini">/Night</span>
                                     </p>
-                                    <a class="room__booking" href="roomDetails.php?id={{$rooms[1][$i]["room_id"]}}">
+                                    <a class="room__booking" href="roomDetails?id={{$rooms[1][$i]["room_id"]}}">
                                         Booking Now
                                     </a>
                                 </div>
@@ -76,7 +76,7 @@
                                     <p class="room__price">
                                         ${{$rooms[1][$i]["room_price"] - round($rooms[1][$i]["room_price"] * ($rooms[1][$i]["room_offer"]/100),0)}}<span class="price-mini">/Night</span>
                                     </p>
-                                    <a class="room__booking" href="roomDetails.php?id={{$rooms[1][$i]["room_id"]}}">
+                                    <a class="room__booking" href="roomDetails?id={{$rooms[1][$i]["room_id"]}}">
                                         Booking Now
                                     </a>
                                 </div>

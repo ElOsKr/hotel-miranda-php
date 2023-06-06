@@ -32,7 +32,7 @@
             <div class="details__img">
                 <img src={{$room["room_photo"]}} alt="doubleBed">
             </div>
-            <form class="details__form" method="post" action="roomDetails.php?id={{$room['room_id']}}">
+            <form class="details__form" method="post" action="roomDetails?id={{$room['room_id']}}">
                 <h2 class="form__title">
                     Check Availability
                 </h2>
@@ -148,7 +148,7 @@
                                         <p class="room__price">
                                             ${{$relatedRooms[$i]['room_price'] - round($relatedRooms[$i]['room_price']*($relatedRooms[$i]['room_offer']/100))}}/Night
                                         </p>
-                                        <a class="room__booking" href="roomDetails.php?id={{$relatedRooms[$i]['room_id']}}">
+                                        <a class="room__booking" href="roomDetails?id={{$relatedRooms[$i]['room_id']}}">
                                             Booking Now
                                         </a>
                                     </div>
