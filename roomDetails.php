@@ -20,6 +20,11 @@
         "air" => "Air Conditioner",
     ];
 
+    if(!isset($_GET['id'])){
+        header("Location: rooms");
+        die();
+    }
+
     $roomFetched = getRoom($_GET['id'])[0];
 
     $roomType = $roomFetched['room_type'];
@@ -34,17 +39,21 @@
 
         global $availability;
 
-        $availables = getAvailables($_POST['checkIn'],$_POST['checkOut']);
-
-        if(($availables)){
-            foreach($availables as $key => $val){
-                if($val['room_id']===$_GET['id']){
-                    $availability = "available";
-                    break;
-                }
-            }
+        if($_POST['checkIn']>$_POST['checkOut']){
+            $availability = "check date error";
         }else{
-            $availability = "not available";
+            $availables = getAvailables($_POST['checkIn'],$_POST['checkOut']);
+
+            if(($availables)){
+                foreach($availables as $key => $val){
+                    if($val['room_id']===$_GET['id']){
+                        $availability = "available";
+                        break;
+                    }
+                }
+            }else{
+                $availability = "not available";
+            }            
         }
     }
 

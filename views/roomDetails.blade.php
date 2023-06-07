@@ -50,6 +50,8 @@
                         The room is available between {{$_POST['checkIn']}} and {{$_POST['checkOut']}}
                     @elseif($availability === "not available")
                         The room is <span style="color: red;">NOT</span> available between {{$_POST['checkIn']}} and {{$_POST['checkOut']}}
+                    @elseif($availability === "check date error")
+                        CheckIn Date <span style="color: red;">CAN NOT</span> be greater than CheckOut
                     @endif
                 </p>
             </form>
