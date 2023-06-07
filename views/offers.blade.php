@@ -46,7 +46,7 @@
 
                             @endfor
                             </div>
-                            <a class="offer__btn" href="roomDetails.php?id={{$offers[$i]['room_id']}}">
+                            <a class="offer__btn" href="roomDetails?id={{$offers[$i]['room_id']}}">
                                 BOOK NOW
                             </a>
                         </div>
@@ -90,7 +90,7 @@
                                     <p class="room__price">
                                         ${{$populars[$i]['room_price'] - round($populars[$i]['room_price']*($populars[$i]['room_offer']/100))}}/Night
                                     </p>
-                                    <a class="room__booking" href="roomDetails.php?id={{$populars[$i]['room_id']}}">
+                                    <a class="room__booking" href="roomDetails?id={{$populars[$i]['room_id']}}">
                                         Booking Now
                                     </a>
                                 </div>

@@ -3,7 +3,7 @@
 include './setup.php';
 include './database/offersFetch.php';
 
-$roomAmenities = [
+$amenities = [
     "security" => "Smart Security",
     "team" => "Expert Team", 
     "support" => "24/7 online support",
@@ -20,6 +20,6 @@ $roomAmenities = [
     "air" => "Air Conditioner",
 ];
 
-echo $blade->run('offers',array('offers' => $offers = getOffers(),'populars' => $populars = getPopulars(),'amenities' => $amenities = $roomAmenities));
+echo $blade->run('offers',array('offers' => $offers = getOffers(),'populars' => $populars = getPopulars(),'amenities' => $amenities));
 
 ?>

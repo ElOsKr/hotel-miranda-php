@@ -1,6 +1,12 @@
 .rooms-rooms{
     padding: 0 20px;
 
+    .room_msg{
+        font-family: var(--font-OldStandard);
+        font-weight: 400;
+        font-size: 20px;
+        margin-top: 10px;
+    }
 
     .swiper-rooms{
         overflow: hidden;

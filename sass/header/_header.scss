@@ -32,10 +32,16 @@
         flex: 1;
         display: flex;
         justify-content: space-between;
+        text-decoration: none;
+
+        a{
+            text-decoration: none;
+        }
 
         &-logo{
             display: flex;
             align-items: center;
+            color: black;
             cursor: pointer;
             &.logo__letter{
                 position: relative;

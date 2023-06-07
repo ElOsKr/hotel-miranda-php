@@ -73,6 +73,9 @@
                 font-family: var(--font-OldStandard);
                 font-size: 28px;
                 font-weight: 400;
+                &::first-letter{
+                    text-transform: capitalize;
+                }
             }
 
             .room__description{

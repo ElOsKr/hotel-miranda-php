@@ -7,6 +7,10 @@ function formSubmit(e){
 
     e.preventDefault();
 
+    document.getElementById("formFields").classList.remove('error')
+    document.getElementById("formSuccess").classList.remove('success')
+    document.getElementById("formError").classList.remove('error')
+
     let userName = document.getElementById("username").value;
     let userEmail = document.getElementById("useremail").value;
     let userTel = document.getElementById("usertel").value;
@@ -23,13 +27,12 @@ function formSubmit(e){
 
     for(var key in form){
         if(form[key] === ""){
-            document.getElementById("formStatus").style.color = "red"
-            document.getElementById("formStatus").innerHTML="Must fill all fields";
+            document.getElementById("formFields").classList.add('error')
             return;
         } 
     }
 
-    document.getElementById("formStatus").innerHTML="";
+    document.getElementById("formFields").classList.remove('error')
 
     fetch("./database/contactForm.php",{
         method: 'post',
@@ -43,12 +46,10 @@ function formSubmit(e){
     })
     .then(function(status){
         if(status==="Inserted"){
-            document.getElementById("formStatus").style.color = "green"
-            document.getElementById("formStatus").innerHTML="Comment sent successfully";
+            document.getElementById("formSuccess").classList.add('success')
             return;
         }else{
-            document.getElementById("formStatus").style.color = "red"
-            document.getElementById("formStatus").innerHTML="Error sending the comment";
+            document.getElementById("formError").classList.add('error')
             return;
         }
     })

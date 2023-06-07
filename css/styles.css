@@ -30,10 +30,15 @@
   flex: 1;
   display: flex;
   justify-content: space-between;
+  text-decoration: none;
+}
+.header__content a {
+  text-decoration: none;
 }
 .header__content-logo {
   display: flex;
   align-items: center;
+  color: black;
   cursor: pointer;
 }
 .header__content-logo.logo__letter {
@@ -485,6 +490,9 @@
   font-family: var(--font-OldStandard);
   font-size: 28px;
   font-weight: 400;
+}
+.rooms__room .room__info .room__title::first-letter {
+  text-transform: capitalize;
 }
 .rooms__room .room__info .room__description {
   font-family: var(--font-Roboto);
@@ -1191,6 +1199,12 @@
 .rooms-rooms {
   padding: 0 20px;
 }
+.rooms-rooms .room_msg {
+  font-family: var(--font-OldStandard);
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 10px;
+}
 .rooms-rooms .swiper-rooms {
   overflow: hidden;
   padding-bottom: 30px;
@@ -1314,6 +1328,14 @@
 .details {
   padding: 50px 20px;
 }
+.details__availability {
+  margin-top: 20px;
+  font-family: var(--font-Archivo);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #777777;
+}
 .details__caption {
   font-family: var(--font-Archivo);
   font-size: 13px;
@@ -1396,7 +1418,7 @@
 .details__form .form__btn {
   margin: 0 auto;
   color: white;
-  padding: 22px 50px;
+  padding: 22px 30px;
   font-family: var(--font-Roboto);
   font-weight: 700;
   letter-spacing: 3px;
@@ -1404,6 +1426,7 @@
   border: 1px solid #BEAD8E;
   margin-top: 20px;
   background-color: #BEAD8E;
+  word-break: break-all;
 }
 .details__description {
   margin-top: 30px;
@@ -1998,7 +2021,12 @@
   width: 258px;
 }
 
-#formStatus {
+.formSuccess, .formFields, .formError {
+  display: none;
+}
+
+.success {
+  display: block;
   margin-top: 20px;
   left: 50%;
   transform: translate(-50%);
@@ -2006,6 +2034,19 @@
   font-family: var(--font-Roboto);
   font-weight: 400;
   font-size: 25px;
+  color: green;
+}
+
+.error {
+  display: block;
+  margin-top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  font-family: var(--font-Roboto);
+  font-weight: 400;
+  font-size: 25px;
+  color: red;
 }
 
 @media only screen and (min-width: 1000px) {
