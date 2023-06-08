@@ -35,28 +35,31 @@
 
     $availability = null;
 
-    if((isset($_POST['checkIn']) && $_POST['checkIn'] !== "") && (isset($_POST['checkOut']) && $_POST['checkOut'] !== "")){
+    if(isset($_POST['checkIn']) && isset($_POST['checkOut'])){
 
         global $availability;
 
-        if($_POST['checkIn']>$_POST['checkOut']){
-            $availability = "check date error";
-        }else{
-            $availables = getAvailables($_POST['checkIn'],$_POST['checkOut']);
-
-            if(($availables)){
-                foreach($availables as $key => $val){
-                    if($val['room_id']===$_GET['id']){
-                        $availability = "available";
-                        break;
-                    }
-                }
+        if($_POST['checkIn'] !== "" || $_POST['checkOut'] !== ""){
+            if($_POST['checkIn']>$_POST['checkOut']){
+                $availability = "check date error";
             }else{
-                $availability = "not available";
+                $availables = getAvailables($_POST['checkIn'],$_POST['checkOut']);
+
+                if(($availables)){
+                    foreach($availables as $key => $val){
+                        if($val['room_id']===$_GET['id']){
+                            $availability = "available";
+                            break;
+                        }
+                    }
+                }else{
+                    $availability = "not available";
+                }            
             }            
+        }else{
+            $availability = "no data";
         }
-    }else{
-        $availability = "no data";
+
     }
 
     echo $blade->run('roomDetails',array('room' => $room = $roomFetched, 'amenities' => $amenities = $roomAmenities, 'relatedRooms' => $relatedRoom = $related, 'availability' => $availability))
