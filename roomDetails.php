@@ -35,7 +35,7 @@
 
     $availability = null;
 
-    if(isset($_POST['checkIn']) && isset($_POST['checkOut'])){
+    if((isset($_POST['checkIn']) && $_POST['checkIn'] !== "") && (isset($_POST['checkOut']) && $_POST['checkOut'] !== "")){
 
         global $availability;
 
@@ -55,6 +55,8 @@
                 $availability = "not available";
             }            
         }
+    }else{
+        $availability = "no data";
     }
 
     echo $blade->run('roomDetails',array('room' => $room = $roomFetched, 'amenities' => $amenities = $roomAmenities, 'relatedRooms' => $relatedRoom = $related, 'availability' => $availability))

@@ -32,7 +32,7 @@
             <div class="details__img">
                 <img src={{$room["room_photo"]}} alt="doubleBed">
             </div>
-            <form class="details__form" method="post" action="roomDetails?id={{$room['room_id']}}">
+            <form class="details__form" method="post" action="roomDetails.php?id={{$room['room_id']}}">
                 <h2 class="form__title">
                     Check Availability
                 </h2>
@@ -52,6 +52,8 @@
                         The room is <span style="color: red;">NOT</span> available between {{$_POST['checkIn']}} and {{$_POST['checkOut']}}
                     @elseif($availability === "check date error")
                         CheckIn Date <span style="color: red;">CAN NOT</span> be greater than CheckOut
+                    @elseif($availability === "no data")
+                        No data introduced
                     @endif
                 </p>
             </form>
