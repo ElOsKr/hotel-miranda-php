@@ -34,7 +34,7 @@ function formSubmit(e){
 
     document.getElementById("formFields").classList.remove('error')
 
-    fetch("./database/contactForm.php",{
+    fetch("./DB/contactMethods.php",{
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
