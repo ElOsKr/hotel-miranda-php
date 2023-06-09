@@ -1,7 +1,7 @@
 <?php
 
     include './setup.php';
-    include './database/roomsFetch.php';
+    include './DB/roomsMethods.php';
 
     global $rooms;
 

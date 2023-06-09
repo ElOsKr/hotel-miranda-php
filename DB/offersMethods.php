@@ -1,5 +1,5 @@
 <?php
-    include './database/connection.php';
+    include './DB/connection.php';
     
     function getOffers(){
         global $conn;

@@ -32,10 +32,10 @@
                 </a>
                 <div class="header__content-menu">
                     <ul>
-                        <li><a href="./aboutUs">About us</a></li>
-                        <li><a href="./rooms">Rooms</a></li>
-                        <li><a href="./offers">Offers</a></li>
-                        <li><a href="./contact">Contact</a></li>
+                        <li><a href="./aboutUs.php">About us</a></li>
+                        <li><a href="./rooms.php">Rooms</a></li>
+                        <li><a href="./offers.php">Offers</a></li>
+                        <li><a href="./contact.php">Contact</a></li>
                     </ul>
                 </div>
                 <div class="header__content-options">

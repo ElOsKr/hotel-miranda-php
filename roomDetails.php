@@ -1,7 +1,7 @@
 <?php
 
     include './setup.php';
-    include './database/singleRoomFetch.php';
+    include './DB/singleRoomMethods.php';
 
     $roomAmenities = [
         "security" => "Smart Security",

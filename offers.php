@@ -1,7 +1,7 @@
 <?php
 
 include './setup.php';
-include './database/offersFetch.php';
+include './DB/offersMethods.php';
 
 $amenities = [
     "security" => "Smart Security",

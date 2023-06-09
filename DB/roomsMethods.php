@@ -1,6 +1,6 @@
 <?php
 
-    include './database/connection.php';
+    include './DB/connection.php';
 
     function getRooms(){
         global $conn;
